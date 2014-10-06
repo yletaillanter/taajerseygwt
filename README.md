@@ -8,4 +8,4 @@ It uses autobean to do the marshalling/unmarshalling of JSON Object
 To run it
 
 ```bash
-mvn clean gwt:compile  package tomcat7:run
+mvn clean compile gwt:compile  package tomcat7:run
