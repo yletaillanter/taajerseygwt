@@ -38,6 +38,7 @@ public class BookResource implements MyService {
 		for (int i = 0; i < 20; i++) {
             manager.persist(new Book( "Title " + i, "Author " + i, new Double(Math.random()*20).intValue()));
         }
+		t.commit();
 		
 
 	}
@@ -48,7 +49,7 @@ public class BookResource implements MyService {
 	@GET
 	@Produces({ MediaType.APPLICATION_JSON })
 	public Collection<Book> list() {
-		return manager.createQuery("select e from Book as b").getResultList();
+		return manager.createQuery("select e from Book as e").getResultList();
 	}
 
 	/* (non-Javadoc)
